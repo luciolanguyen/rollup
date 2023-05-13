@@ -47,4 +47,4 @@ NAMESPACE_ID=ede480b6acc7a1c7
 DA_HEIGHT=$(curl https://rpc-1.celestia.nodes.guru/block | jq -r '.result.block.header.height')
 echo $DA_HEIGHT
 ###3. starting rollup
-okp4d --rollkit.aggregator true --rollkit.block_time 2.5s --rollkit.da_block_time 2.5s --rollkit.da_layer celestia --rollkit.da_config='{"base_url":"http://localhost:26659","timeout":60000000000,"fee":100,"gas_limit":100000}' --rollkit.namespace_id $NAMESPACE_ID  --rollkit.da_start_height $DA_BLOCK_HEIGHT --p2p.laddr "0.0.0.0:26656" --p2p.seed_mode --log_level debug
+okp4d --rollkit.aggregator true --rollkit.block_time 2.5s --rollkit.da_block_time 2.5s --rollkit.da_layer celestia --rollkit.da_config='{"base_url":"http://localhost:26659","timeout":60000000000,"fee":100,"gas_limit":100000}' --rollkit.namespace_id $NAMESPACE_ID  --rollkit.da_start_height $DA_HEIGHT --p2p.laddr "0.0.0.0:26656" --p2p.seed_mode --log_level debug
